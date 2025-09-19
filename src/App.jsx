@@ -20,7 +20,6 @@ function App() {
     }
   }, [])
 
-
   const saveToLS = () => {
     localStorage.setItem("todos", JSON.stringify(todos))
   }
@@ -28,9 +27,6 @@ function App() {
   const toggleFinished = () => {
     setshowFinished(!showFinished)
   }
-
-
-
 
   const handleEdit = (e, id) => {
     let t = todos.filter(i => i.id === id)
@@ -71,13 +67,14 @@ function App() {
     saveToLS()
   }
 
-
   return (
     < >
       <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
         <Particles className="bg-black relative" />
-        <Navbar />
-        <div className="absolute top-15 items-center mx-[30%] max-sm:mx-[15%] md:container my-5 rounded-xl p-5 bg-[#ffffff90] min-h-[80vh] md:w-[35%] text-black">
+        <Navbar /> 
+        <div className='flex justify-center'>
+        <div className="absolute top-15 max-sm:mx-[5%] md:container my-5 rounded-xl p-5 bg-[#ffffff90] min-h-[80vh] lg:w-[40%] md:w-[50%] text-black">
+          {/* <div className="absolute top-15 items-center mx-[30%] max-sm:mx-[15%] md:container my-5 rounded-xl p-5 bg-[#ffffff90] min-h-[80vh] md:w-[35%] text-black"></div> */}
           <div className='flex justify-center flex-col'>
           <DecryptedText text={"Taskly"} />
           <DecryptedText text={"Manage your tasks at one place"} className='font-bold text-center text-lg' parentClassName='font-bold text-center text-lg'/>
@@ -111,6 +108,7 @@ function App() {
               </div>
             })}
           </div>
+        </div>
         </div>
       </div>
     </>
